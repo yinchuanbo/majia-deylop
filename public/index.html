@@ -10,178 +10,113 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "JetBrains Mono" !important;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f5f5f5;
-        font-style: italic;
-      }
-      .container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-      .form-group {
-        margin-bottom: 15px;
-      }
-      input[type="text"] {
-        width: 100%;
-        margin-top: 5px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-size: 14px;
-        font-style: italic;
-        height: 43px;
-        padding-left: 10px;
-        outline: none;
-      }
 
-      h1 {
-        margin-top: 0;
-      }
-      input::placeholder {
-        font-size: 14px;
-        font-style: italic;
-      }
-      button {
-        background-color: #4caf50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-style: italic;
-        font-size: 14px;
-        font-family: "JetBrains Mono" !important;
-      }
-      button:hover {
-        background-color: #45a049;
-      }
-      .result {
-        margin-top: 20px;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        display: none;
-      }
-      .error {
-        color: red;
-        margin-top: 10px;
-        display: none;
-      }
-      .input-help {
-        display: block;
-        margin-top: 5px;
-        font-size: 12px;
-        color: #666;
-      }
-      input::placeholder {
-        color: #999;
-        font-size: 13px;
-      }
-      .loading {
-        position: relative;
-        opacity: 0.7;
-        cursor: not-allowed;
-      }
-      .loading::after {
-        content: "";
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        top: 0;
-        left: 100%;
-        margin-left: 10px;
-        border: 2px solid #f3f3f3;
-        border-top: 2px solid #3498db;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      button:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-      }
-      .radio-group {
-        margin-bottom: 20px;
-      }
-      .radio-option {
-        display: block;
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      .radio-option:hover {
-        background-color: #f5f5f5;
-      }
-      .radio-option.selected {
-        background-color: #e3f2fd;
-        border-color: #2196f3;
-      }
-      .required {
-        color: #ff4444;
-        margin-left: 3px;
-      }
-      .error-message {
-        color: #ff4444;
-        font-size: 14px;
-        margin-top: 5px;
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Toast 提示 -->
+    <div id="toast" class="toast"></div>
+
     <div class="container">
       <h1>Git Tag Manager</h1>
       <div class="form-group">
         <label>Git Repository Path: <span class="required">*</span></label>
         <div class="radio-group" id="folderPathGroup">
           <label class="radio-option">
-            <input
-              type="radio"
-              name="folderPath"
-              value="E:\Project\ismartta.ai"
-            />
-            ismartta.ai
+            <div class="repo-info">
+              <input
+                type="radio"
+                name="folderPath"
+                value="E:\Project\ismartta.ai"
+              />
+              ismartta.ai
+              <span class="current-branch-label" data-repo="E:\\Project\\ismartta.ai"></span>
+            </div>
+            <div class="button-group">
+              <button
+                class="branch-btn"
+                onclick="showBranchModal(event, 'E:\\Project\\ismartta.ai')"
+              >
+                Switch Branch
+              </button>
+              <button
+                class="vscode-btn"
+                onclick="openInVSCode(event, 'E:\\Project\\ismartta.ai')"
+              >
+                VS Code
+              </button>
+            </div>
           </label>
           <label class="radio-option">
-            <input type="radio" name="folderPath" value="E:\Project\vidqu.ai" />
-            vidqu.ai
+            <div class="repo-info">
+              <input
+                type="radio"
+                name="folderPath"
+                value="E:\Project\vidqu.ai"
+              />
+              vidqu.ai
+              <span class="current-branch-label" data-repo="E:\\Project\\vidqu.ai"></span>
+            </div>
+            <div class="button-group">
+              <button
+                class="branch-btn"
+                onclick="showBranchModal(event, 'E:\\Project\\vidqu.ai')"
+              >
+                Switch Branch
+              </button>
+              <button
+                class="vscode-btn"
+                onclick="openInVSCode(event, 'E:\\Project\\vidqu.ai')"
+              >
+                VS Code
+              </button>
+            </div>
           </label>
           <label class="radio-option">
-            <input
-              type="radio"
-              name="folderPath"
-              value="E:\Project\vidwud.ai"
-            />
-            vidwud.ai
+            <div class="repo-info">
+              <input
+                type="radio"
+                name="folderPath"
+                value="E:\Project\vidwud.ai"
+              />
+              vidwud.ai
+              <span class="current-branch-label" data-repo="E:\\Project\\vidwud.ai"></span>
+            </div>
+            <div class="button-group">
+              <button
+                class="branch-btn"
+                onclick="showBranchModal(event, 'E:\\Project\\vidwud.ai')"
+              >
+                Switch Branch
+              </button>
+              <button
+                class="vscode-btn"
+                onclick="openInVSCode(event, 'E:\\Project\\vidwud.ai')"
+              >
+                VS Code
+              </button>
+            </div>
           </label>
           <label class="radio-option">
-            <input type="radio" name="folderPath" value="D:\miocreate.ai" />
-            miocreate.ai
-          </label>
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="folderPath"
-              value="E:\Project\vidmud.ai"
-            />
-            vidmud.ai
+            <div class="repo-info">
+              <input type="radio" name="folderPath" value="D:\miocreate.ai" />
+              miocreate.ai
+              <span class="current-branch-label" data-repo="D:\\miocreate.ai"></span>
+            </div>
+            <div class="button-group">
+              <button
+                class="branch-btn"
+                onclick="showBranchModal(event, 'D:\\miocreate.ai')"
+              >
+                Switch Branch
+              </button>
+              <button
+                class="vscode-btn"
+                onclick="openInVSCode(event, 'D:\\miocreate.ai')"
+              >
+                VS Code
+              </button>
+            </div>
           </label>
         </div>
         <div class="error-message" id="folderPathError"></div>
@@ -210,96 +145,46 @@
       </div>
     </div>
 
-    <script>
-      // 添加单选按钮的选中效果
-      document.querySelectorAll(".radio-option").forEach((option) => {
-        option.addEventListener("click", function () {
-          // 移除所有选中效果
-          document.querySelectorAll(".radio-option").forEach((opt) => {
-            opt.classList.remove("selected");
-          });
-          // 添加当前选中效果
-          this.classList.add("selected");
-          // 选中单选按钮
-          const radio = this.querySelector('input[type="radio"]');
-          radio.checked = true;
-        });
-      });
+    <!-- 分支切换模态框 -->
+    <div id="branchModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBranchModal()">&times;</span>
+        <div class="branch-section">
+          <h4>Current Branch</h4>
+          <div id="currentBranch" class="branch-item current"></div>
+        </div>
+        <div
+          class="branch-section collapsible collapsed"
+          id="localBranchSection"
+        >
+          <h4 onclick="toggleSection('localBranchSection')">Local Branches</h4>
+          <div id="localBranches" class="branch-list"></div>
+        </div>
+        <div
+          class="branch-section collapsible collapsed"
+          id="remoteBranchSection"
+        >
+          <h4 onclick="toggleSection('remoteBranchSection')">
+            Remote Branches
+          </h4>
+          <div id="remoteBranches" class="branch-list"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="cancel-btn" onclick="closeBranchModal()">
+            Cancel
+          </button>
+          <button
+            id="confirmBranchBtn"
+            class="confirm-btn"
+            onclick="confirmSwitchBranch()"
+            disabled
+          >
+            Confirm Switch
+          </button>
+        </div>
+      </div>
+    </div>
 
-      async function createTag() {
-        const button = document.getElementById("createTagBtn");
-        const selectedPath = document.querySelector(
-          'input[name="folderPath"]:checked'
-        );
-        const tagNameInput = document.getElementById("tagName");
-        const errorDiv = document.getElementById("error");
-        const resultDiv = document.getElementById("result");
-        const folderPathError = document.getElementById("folderPathError");
-        const tagNameError = document.getElementById("tagNameError");
-
-        // 验证必填项
-        if (!selectedPath) {
-          folderPathError.textContent = "Please select a Git repository path.";
-          folderPathError.style.display = "block";
-          return;
-        } else {
-          folderPathError.style.display = "none";
-        }
-
-        if (!tagNameInput.value.trim()) {
-          tagNameError.textContent = "Please enter a tag name.";
-          tagNameError.style.display = "block";
-          return;
-        } else {
-          tagNameError.style.display = "none";
-        }
-
-        // 禁用按钮并添加 loading 效果
-        button.disabled = true;
-        button.classList.add("loading");
-
-        errorDiv.style.display = "none";
-        resultDiv.style.display = "none";
-
-        try {
-          const response = await fetch("/api/git-info", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              folderPath: selectedPath.value,
-              tagName: tagNameInput.value.trim(),
-            }),
-          });
-
-          const data = await response.json();
-
-          if (response.ok) {
-            document.getElementById("commitHash").textContent =
-              data.commit.hash;
-            document.getElementById("commitMessage").textContent =
-              data.commit.message;
-            document.getElementById("commitAuthor").textContent =
-              data.commit.author;
-            document.getElementById("commitDate").textContent =
-              data.commit.date;
-            document.getElementById("tagName").textContent = data.tagName;
-            resultDiv.style.display = "block";
-          } else {
-            errorDiv.textContent = data.error;
-            errorDiv.style.display = "block";
-          }
-        } catch (error) {
-          errorDiv.textContent =
-            "An error occurred while processing your request.";
-          errorDiv.style.display = "block";
-        } finally {
-          // 移除 loading 效果并启用按钮
-          button.disabled = false;
-          button.classList.remove("loading");
-        }
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
