@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git Tag Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "JetBrains Mono" !important;
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
         background-color: #f5f5f5;
+        font-style: italic;
       }
       .container {
         background-color: white;
@@ -23,11 +30,23 @@
       }
       input[type="text"] {
         width: 100%;
-        padding: 8px;
         margin-top: 5px;
         border: 1px solid #ddd;
         border-radius: 4px;
         box-sizing: border-box;
+        font-size: 14px;
+        font-style: italic;
+        height: 43px;
+        padding-left: 10px;
+        outline: none;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+      input::placeholder {
+        font-size: 14px;
+        font-style: italic;
       }
       button {
         background-color: #4caf50;
@@ -36,6 +55,9 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-style: italic;
+        font-size: 14px;
+        font-family: "JetBrains Mono" !important;
       }
       button:hover {
         background-color: #45a049;
@@ -107,9 +129,6 @@
       .radio-option:hover {
         background-color: #f5f5f5;
       }
-      .radio-option input[type="radio"] {
-        margin-right: 10px;
-      }
       .radio-option.selected {
         background-color: #e3f2fd;
         border-color: #2196f3;
@@ -121,7 +140,7 @@
       .error-message {
         color: #ff4444;
         font-size: 14px;
-        margin-top: 0;
+        margin-top: 5px;
         display: none;
       }
     </style>
@@ -157,7 +176,11 @@
             miocreate.ai
           </label>
           <label class="radio-option">
-            <input type="radio" name="folderPath" value="E:\Project\vidmud.ai" />
+            <input
+              type="radio"
+              name="folderPath"
+              value="E:\Project\vidmud.ai"
+            />
             vidmud.ai
           </label>
         </div>
@@ -171,17 +194,9 @@
           placeholder="Must start with 't', 'r', or 'v' (e.g., t-1.0.0)"
           required
         />
-        <small class="input-help">
-          Tag name must start with 't', 'r', or 'v'. If left empty, a tag
-          starting with 't-' will be auto-generated.<br />
-          Note: Version tags (starting with 'v') can only be created from 'main'
-          or 'master' branch.
-        </small>
         <div class="error-message" id="tagNameError"></div>
       </div>
-      <button id="createTagBtn" onclick="createTag()">
-        Create and Push Tag
-      </button>
+      <button id="createTagBtn" onclick="createTag()">Deploy</button>
 
       <div id="error" class="error"></div>
 
@@ -213,7 +228,9 @@
 
       async function createTag() {
         const button = document.getElementById("createTagBtn");
-        const selectedPath = document.querySelector('input[name="folderPath"]:checked');
+        const selectedPath = document.querySelector(
+          'input[name="folderPath"]:checked'
+        );
         const tagNameInput = document.getElementById("tagName");
         const errorDiv = document.getElementById("error");
         const resultDiv = document.getElementById("result");
@@ -250,9 +267,9 @@
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ 
-              folderPath: selectedPath.value, 
-              tagName: tagNameInput.value.trim() 
+            body: JSON.stringify({
+              folderPath: selectedPath.value,
+              tagName: tagNameInput.value.trim(),
             }),
           });
 
