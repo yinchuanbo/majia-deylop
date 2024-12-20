@@ -54,9 +54,7 @@ app.post("/api/git-info", async (req, res) => {
     const latestCommit = log.latest;
 
     // 获取 tag 名称，如果前端未传入则使用默认格式
-    const tagName =
-      req.body.tagName ||
-      `t-${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}`;
+    const tagName = req.body.tagName || "";
 
     // 验证 tag 名称格式
     if (!tagName.match(/^[trv]/)) {
@@ -66,11 +64,12 @@ app.post("/api/git-info", async (req, res) => {
     }
 
     // 如果是 v 开头的 tag，检查当前分支
-    if (tagName.startsWith('v')) {
+    if (tagName.startsWith("v")) {
       const currentBranch = await git.branch();
-      if (!['main', 'master'].includes(currentBranch.current)) {
+      if (!["main", "master"].includes(currentBranch.current)) {
         return res.status(400).json({
-          error: "Version tags (starting with 'v') can only be created from 'main' or 'master' branch.",
+          error:
+            "Version tags (starting with 'v') can only be created from 'main' or 'master' branch.",
           currentBranch: currentBranch.current,
         });
       }
