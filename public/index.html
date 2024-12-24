@@ -162,6 +162,28 @@
     </div>
 
     <!-- 分支切换模态框 -->
+    <div id="branchModal" class="modal">
+      <div class="modal-content">
+        <h2>切换分支</h2>
+        <div class="branch-info">
+          <p>当前分支: <span id="currentBranch"></span></p>
+        </div>
+        <div class="branch-sections">
+          <div id="localBranchSection" class="branch-section collapsed">
+            <h3 onclick="toggleSection('localBranchSection')">本地分支</h3>
+            <div id="localBranches" class="branch-list"></div>
+          </div>
+          <div id="remoteBranchSection" class="branch-section collapsed">
+            <h3 onclick="toggleSection('remoteBranchSection')">远程分支</h3>
+            <div id="remoteBranches" class="branch-list"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="confirmBranchBtn" onclick="confirmSwitchBranch()" disabled>确认切换</button>
+          <button onclick="closeBranchModal()">取消</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
     <script src="crawler.js"></script>

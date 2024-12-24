@@ -245,7 +245,6 @@ button:disabled {
   position: relative;
   background-color: white;
   padding: 20px;
-  padding-top: 40px;
   width: 80%;
   max-width: 500px;
   max-height: 80vh;
@@ -257,6 +256,14 @@ button:disabled {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
               0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.modal-content h3 {
+  font-size: 18px;
 }
 .modal.show .modal-content {
   transform: translateY(0) scale(1);
@@ -299,6 +306,7 @@ button:disabled {
   border-radius: 4px;
   transition: all 0.2s;
   color: #475569;
+  font-size: 14px;
 }
 .branch-item:hover {
   background-color: #f1f5f9;
