@@ -253,7 +253,7 @@ button:disabled {
   font-family: "JetBrains Mono";
   transform: translateY(20px) scale(0.95);
   opacity: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
               0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -462,11 +462,14 @@ button:disabled {
   background-color: #3c3c42;
 }
 
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
 /* Web Crawler Styles */
 .crawler-btn {
   display: block;
-  width: 100%;
-  margin-top: 20px;
   background: linear-gradient(45deg, #6366f1, #4f46e5);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;

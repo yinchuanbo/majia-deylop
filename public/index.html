@@ -30,7 +30,10 @@
                 value="E:\Project\ismartta.ai"
               />
               ismartta.ai
-              <span class="current-branch-label" data-repo="E:\\Project\\ismartta.ai"></span>
+              <span
+                class="current-branch-label"
+                data-repo="E:\\Project\\ismartta.ai"
+              ></span>
             </div>
             <div class="button-group">
               <button
@@ -55,7 +58,10 @@
                 value="E:\Project\vidqu.ai"
               />
               vidqu.ai
-              <span class="current-branch-label" data-repo="E:\\Project\\vidqu.ai"></span>
+              <span
+                class="current-branch-label"
+                data-repo="E:\\Project\\vidqu.ai"
+              ></span>
             </div>
             <div class="button-group">
               <button
@@ -80,7 +86,10 @@
                 value="E:\Project\vidwud.ai"
               />
               vidwud.ai
-              <span class="current-branch-label" data-repo="E:\\Project\\vidwud.ai"></span>
+              <span
+                class="current-branch-label"
+                data-repo="E:\\Project\\vidwud.ai"
+              ></span>
             </div>
             <div class="button-group">
               <button
@@ -101,7 +110,10 @@
             <div class="repo-info">
               <input type="radio" name="folderPath" value="D:\miocreate.ai" />
               miocreate.ai
-              <span class="current-branch-label" data-repo="D:\\miocreate.ai"></span>
+              <span
+                class="current-branch-label"
+                data-repo="D:\\miocreate.ai"
+              ></span>
             </div>
             <div class="button-group">
               <button
@@ -131,7 +143,11 @@
         />
         <div class="error-message" id="tagNameError"></div>
       </div>
-      <button id="createTagBtn" onclick="createTag()">Deploy</button>
+
+      <div class="btns">
+        <button id="createTagBtn" onclick="createTag()">Deploy</button>
+        <button id="showCrawlerBtn" class="crawler-btn">Crawler</button>
+      </div>
 
       <div id="error" class="error"></div>
 
@@ -143,19 +159,23 @@
         <p><strong>Date:</strong> <span id="commitDate"></span></p>
         <p><strong>Created Tag:</strong> <span id="tagName"></span></p>
       </div>
-
-      <!-- Web Crawler Button -->
-      <button id="showCrawlerBtn" class="crawler-btn">网页爬虫</button>
     </div>
 
     <!-- Web Crawler Modal -->
     <div id="crawlerModal" class="modal">
-      <div class="modal-content">
+      <div class="modal-content" style="padding-top: 40px;">
         <span class="close" onclick="closeCrawlerModal()">&times;</span>
         <div class="form-group">
-          <input type="url" id="crawlerUrl" placeholder="请输入网址，例如: https://example.com" required />
+          <input
+            type="url"
+            id="crawlerUrl"
+            placeholder="请输入网址，例如: https://example.com"
+            required
+          />
           <div id="crawlerError" class="error-message"></div>
-          <button onclick="startCrawling()" class="crawler-submit-btn">开始爬取</button>
+          <button onclick="startCrawling()" class="crawler-submit-btn">
+            开始爬取
+          </button>
         </div>
         <div id="crawlerResult" class="crawler-result"></div>
       </div>
@@ -179,7 +199,13 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button id="confirmBranchBtn" onclick="confirmSwitchBranch()" disabled>确认切换</button>
+          <button
+            id="confirmBranchBtn"
+            onclick="confirmSwitchBranch()"
+            disabled
+          >
+            确认切换
+          </button>
           <button onclick="closeBranchModal()">取消</button>
         </div>
       </div>
