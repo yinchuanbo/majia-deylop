@@ -143,48 +143,27 @@
         <p><strong>Date:</strong> <span id="commitDate"></span></p>
         <p><strong>Created Tag:</strong> <span id="tagName"></span></p>
       </div>
+
+      <!-- Web Crawler Button -->
+      <button id="showCrawlerBtn" class="crawler-btn">网页爬虫</button>
     </div>
 
-    <!-- 分支切换模态框 -->
-    <div id="branchModal" class="modal">
+    <!-- Web Crawler Modal -->
+    <div id="crawlerModal" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeBranchModal()">&times;</span>
-        <div class="branch-section">
-          <h4>Current Branch</h4>
-          <div id="currentBranch" class="branch-item current"></div>
+        <span class="close" onclick="closeCrawlerModal()">&times;</span>
+        <div class="form-group">
+          <input type="url" id="crawlerUrl" placeholder="请输入网址，例如: https://example.com" required />
+          <div id="crawlerError" class="error-message"></div>
+          <button onclick="startCrawling()" class="crawler-submit-btn">开始爬取</button>
         </div>
-        <div
-          class="branch-section collapsible collapsed"
-          id="localBranchSection"
-        >
-          <h4 onclick="toggleSection('localBranchSection')">Local Branches</h4>
-          <div id="localBranches" class="branch-list"></div>
-        </div>
-        <div
-          class="branch-section collapsible collapsed"
-          id="remoteBranchSection"
-        >
-          <h4 onclick="toggleSection('remoteBranchSection')">
-            Remote Branches
-          </h4>
-          <div id="remoteBranches" class="branch-list"></div>
-        </div>
-        <div class="modal-footer">
-          <button class="cancel-btn" onclick="closeBranchModal()">
-            Cancel
-          </button>
-          <button
-            id="confirmBranchBtn"
-            class="confirm-btn"
-            onclick="confirmSwitchBranch()"
-            disabled
-          >
-            Confirm Switch
-          </button>
-        </div>
+        <div id="crawlerResult" class="crawler-result"></div>
       </div>
     </div>
 
+    <!-- 分支切换模态框 -->
+
     <script src="script.js"></script>
+    <script src="crawler.js"></script>
   </body>
 </html>
