@@ -30,13 +30,41 @@ function closeCrawlerModal() {
 // });
 
 // Download text file
-function downloadText(fileName) {
-  window.location.href = `/api/download/${fileName}`;
+async function downloadText(fileNames) {
+  if (typeof fileNames === "string") {
+    window.location.href = `/api/download/${fileNames}`;
+    return;
+  }
+
+  // Download multiple files
+  for (const fileName of fileNames) {
+    if (fileName) {
+      const link = document.createElement("a");
+      link.href = `/api/download/${fileName}`;
+      link.click();
+      // Small delay between downloads to prevent browser blocking
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+  }
+}
+
+async function crawlWebsite(url) {
+  const response = await fetch("/api/crawl", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ url }),
+  });
+  if (!response.ok) {
+    return null;
+  }
+  return await response.json();
 }
 
 // Start crawling function
 async function startCrawling() {
-  const url = crawlerUrl.value.trim();
+  let url = crawlerUrl.value.trim();
 
   // Validate URL
   if (!url) {
@@ -45,35 +73,63 @@ async function startCrawling() {
     return;
   }
 
+  url += ",";
+
   try {
     // Show loading state
     crawlerResult.innerHTML =
-      '<div class="loading-text">正在爬取网站并检查链接，这可能需要几分钟...</div>';
+      '<div class="loading-spinner"></div><p>正在爬取中，请稍候...</p>';
+    crawlerError.style.display = "none";
 
-    const response = await fetch("/api/crawl", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ url }),
-    });
-    if (!response.ok) {
-      throw new Error("爬取失败");
+    let results = null;
+    let fileNames = [];
+    let totalPages = 0;
+    let resultsPages = 0;
+
+    if (url?.includes(",")) {
+      const urls = url.split(",").filter(Boolean);
+      console.log("urls", urls);
+      results = await Promise.allSettled(urls.map((url) => crawlWebsite(url)));
+
+      // Process results
+      results.forEach((result) => {
+        if (result.status === "fulfilled" && result.value) {
+          totalPages += result.value.totalPages || 0;
+          resultsPages += result.value.resultsPages || 0;
+          if (result.value.fileName) {
+            fileNames.push(result.value.fileName);
+          }
+        }
+      });
+    } else {
+      const result = await crawlWebsite(url.replace(",", ""));
+      if (result) {
+        totalPages = result.totalPages;
+        resultsPages = result.resultsPages;
+        fileNames = [result.fileName];
+      }
     }
-    const data = await response.json();
+
+    if (fileNames.length === 0) {
+      throw new Error("爬取失败：未能获取任何结果");
+    }
+
     crawlerResult.innerHTML = `
-            <div class="crawler-info">
-                <h3>爬取成功！</h3>
-                <p><strong>起始网址：</strong>${data.url}</p>
-                <p><strong>总计爬取页面：</strong>${data.totalPages} 个</p>
-                <p><strong>找到结果的页面：</strong>${data.resultsPages} 个</p>
-            </div>
-            <button onclick="downloadText('${data.fileName}')" class="download-btn">
-                下载完整报告
-            </button>
-        `;
+      <div class="crawler-info">
+        <h3>爬取成功！</h3>
+        <p><strong>总计爬取网站：</strong>${results ? results.length : 1} 个</p>
+        <p><strong>总计爬取页面：</strong>${totalPages} 个</p>
+        <p><strong>找到结果的页面：</strong>${resultsPages} 个</p>
+      </div>
+      <button onclick='downloadText(${JSON.stringify(
+        fileNames
+      )})' class="download-btn">
+        下载完整报告
+      </button>
+    `;
   } catch (error) {
-    crawlerError.textContent = `错误：${error.message}`;
+    console.error("Crawling error:", error);
+    crawlerError.textContent = error.message || "爬取过程中发生错误";
     crawlerError.style.display = "block";
     crawlerResult.innerHTML = "";
   }
