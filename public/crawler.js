@@ -123,9 +123,7 @@ async function startCrawling() {
       </div>
       <button onclick='downloadText(${JSON.stringify(
         fileNames
-      )})' class="download-btn">
-        下载完整报告
-      </button>
+      )})' class="download-btn">下载完整报告</button>
     `;
   } catch (error) {
     console.error("Crawling error:", error);

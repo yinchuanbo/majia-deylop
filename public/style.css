@@ -507,12 +507,12 @@ button:disabled {
   font-style: italic;
 }
 .crawler-result {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 15px;
   background-color: #f8fafc;
   border-radius: 4px;
-  max-height: 300px;
-  overflow-y: auto;
+  /* max-height: 300px; */
+  /* overflow-y: auto; */
   font-size: 14px;
   white-space: pre-wrap;
   word-break: break-word;
@@ -523,10 +523,14 @@ button:disabled {
 .crawler-result:not(:empty) {
   opacity: 1;
   transform: translateY(0);
+  display: flex;
+  flex-direction: column;
 }
 
 .crawler-info {
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .crawler-info h3 {
@@ -588,7 +592,7 @@ button:disabled {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  margin-top: 15px;
+  margin-top: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
