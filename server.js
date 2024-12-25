@@ -252,6 +252,7 @@ app.post("/api/crawl", async (req, res) => {
     }
 
     const urlObj = new URL(url);
+    const shouldCrawlEntireSite = urlObj.pathname === '/' || urlObj.pathname === '';
 
     const urlHost = urlObj.host;
     const urlHostArr = urlHost.split(".");
@@ -267,6 +268,7 @@ app.post("/api/crawl", async (req, res) => {
     }
 
     console.log("Starting crawl from:", url);
+    console.log("Crawl mode:", shouldCrawlEntireSite ? "Entire site" : "Single page");
 
     // 规范化URL，移除多余的斜杠、锚点和查询参数
     function normalizeUrl(url) {
@@ -344,6 +346,12 @@ app.post("/api/crawl", async (req, res) => {
       // 检查规范化后的URL是否已访问
       if (visitedUrls.has(normalizedUrl)) {
         console.log(`Skipping duplicate page: ${pageUrl} (normalized: ${normalizedUrl})`);
+        return;
+      }
+
+      // 如果不是整站爬取模式，且不是初始URL，则跳过
+      if (!shouldCrawlEntireSite && normalizedUrl !== normalizeUrl(url)) {
+        console.log(`Skipping page: ${pageUrl} (not in single-page mode)`);
         return;
       }
 
