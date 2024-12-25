@@ -1,0 +1,205 @@
+爬虫结果报告
+开始URL: https://www.vidqu.ai/
+爬取时间: 2024/12/25 16:39:17
+总计爬取页面: 16
+找到结果的页面数: 16
+爬取失败的页面数: 0
+资源错误数: 0
+
+
+页面: https://www.vidqu.ai/
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/ai-girlfriend.html
+找到 10 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/ai-girlfriend.html">
+<link rel="canonical" href="https://www.vidqu.ai/ai-girlfriend.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/ai-girlfriend.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/novia-virtual.html">
+<link rel="alternate" hreflang="jp" href="https://jp.vidqu.ai/ai-girlfriend.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/ragazza-intelligenza-artificiale.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/petite-amie-ia.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/namorada-virtual.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/ai-girlfriend.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/ai-girlfriend.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/ai-boyfriend.html
+找到 1 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/ai-boyfriend.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/face-swap.html
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/face-swap.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/face-swap.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/multiple-face-swap.html
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/multiple-face-swap.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/multiple-face-swap.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/ai-attractiveness-test.html
+找到 5 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/ai-attractiveness-test.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/ai-attractiveness-test.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/test-de-belleza.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/schoenheits-test.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/ai-attractiveness-test.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/ai-kissing.html
+找到 1 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/ai-kissing.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/video-translator.html
+找到 1 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/video-translator.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/pricing.html
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/pricing.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/pricing.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/about.html
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/about.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/about.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/about.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/about.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/about.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/about.html">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/about.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/about.html">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/about.html">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/about.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/about.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/about.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/my-files.html
+找到 1 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/my-files.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/credit-history.html
+找到 1 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/credit-history.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/privacy.html
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/privacy.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/terms.html
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/terms.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/terms.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/refund-policy.html
+找到 1 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/refund-policy.html">
+
+--------------------------------------------------------------------------------
+
+页面: https://www.vidqu.ai/contact.html
+找到 12 个标签:
+<link rel="canonical" href="https://www.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="en" href="https://www.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="fr" href="https://fr.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="de" href="https://de.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="es" href="https://es.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="pt" href="https://pt.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="ja" href="https://jp.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="it" href="https://it.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="ar" href="https://ar.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="ko" href="https://ko.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://tw.vidqu.ai/contact.html">
+<link rel="alternate" hreflang="x-default" href="https://www.vidqu.ai/contact.html">
+
+--------------------------------------------------------------------------------
