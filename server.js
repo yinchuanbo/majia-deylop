@@ -316,9 +316,16 @@ app.post("/api/crawl", async (req, res) => {
 
     // 递归爬取函数
     async function crawlPage(pageUrl) {
+      // Skip URLs containing 'blog'
+      if (pageUrl.toLowerCase().includes('blog')) {
+        return;
+      }
+
       if (visitedUrls.has(pageUrl)) {
         return;
       }
+
+      console.log("pageUrl", pageUrl)
 
       try {
         const response = await axios({
@@ -330,7 +337,15 @@ app.post("/api/crawl", async (req, res) => {
           },
           responseType: "text",
           timeout: 10000,
+          maxRedirects: 0, // Prevent automatic redirects
+          validateStatus: (status) => status < 400 // Accept 3xx status codes
         });
+
+        // Skip pages with 301 or 302 redirects
+        if (response.status === 301 || response.status === 302) {
+          console.log(`Skipping redirected page: ${pageUrl} (${response.status})`);
+          return;
+        }
 
         visitedUrls.add(pageUrl);
         totalPages++;
