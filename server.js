@@ -268,6 +268,23 @@ app.post("/api/crawl", async (req, res) => {
 
     console.log("Starting crawl from:", url);
 
+    // 规范化URL，移除多余的斜杠、锚点和查询参数
+    function normalizeUrl(url) {
+      try {
+        const urlObj = new URL(url);
+        // 移除末尾斜杠
+        let path = urlObj.pathname.replace(/\/+$/, "");
+        // 如果路径为空，添加单个斜杠
+        if (!path) {
+          path = "/";
+        }
+        // 返回规范化的URL，不包含锚点和查询参数
+        return `${urlObj.protocol}//${urlObj.host}${path}`;
+      } catch (e) {
+        return url;
+      }
+    }
+
     // 存储已访问的URL和找到的链接
     const visitedUrls = new Set();
     const results = new Map(); // URL -> { links: [], linkStatus: Map }
@@ -316,16 +333,21 @@ app.post("/api/crawl", async (req, res) => {
 
     // 递归爬取函数
     async function crawlPage(pageUrl) {
+      // 规范化URL
+      const normalizedUrl = normalizeUrl(pageUrl);
+
       // Skip URLs containing 'blog'
-      if (pageUrl.toLowerCase().includes('blog')) {
+      if (normalizedUrl.toLowerCase().includes("blog")) {
         return;
       }
 
-      if (visitedUrls.has(pageUrl)) {
+      // 检查规范化后的URL是否已访问
+      if (visitedUrls.has(normalizedUrl)) {
+        console.log(`Skipping duplicate page: ${pageUrl} (normalized: ${normalizedUrl})`);
         return;
       }
 
-      console.log("pageUrl", pageUrl)
+      console.log("Crawling:", normalizedUrl);
 
       try {
         const response = await axios({
@@ -347,7 +369,7 @@ app.post("/api/crawl", async (req, res) => {
           return;
         }
 
-        visitedUrls.add(pageUrl);
+        visitedUrls.add(normalizedUrl);
         totalPages++;
 
         const $ = cheerio.load(response.data);
