@@ -129,6 +129,9 @@
           `;
           folderPathGroup.appendChild(label);
         });
+        
+        // Initialize branch labels after creating all repository options
+        initializeCurrentBranches();
       }
 
       // Initialize repository options when the page loads
