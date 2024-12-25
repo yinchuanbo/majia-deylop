@@ -42,6 +42,19 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: containerEntrance 0.8s ease-out forwards;
+}
+
+@keyframes containerEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container h1 {
@@ -50,7 +63,7 @@ body {
 
 input[type="text"] {
   width: 100%;
-  margin-top: 5px;
+  margin-top: 10px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
@@ -313,6 +326,7 @@ button:disabled {
   text-overflow: ellipsis;
   white-space: nowrap;
   margin-left: 10px;
+  margin-top: 3px;
 }
 
 .repo-info {
