@@ -8,7 +8,7 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 
 const app = express();
-const port = 3000;
+let port = 3000;
 
 // 增加请求体大小限制
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -624,6 +624,21 @@ app.post("/api/open-vscode", (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+// 启动服务器
+function startServer(port) {
+  const server = app.listen(port)
+    .on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        console.log(`Port ${port} is in use, trying ${port + 1}...`);
+        server.close();
+        startServer(port + 1);
+      } else {
+        console.error('Error starting server:', err);
+      }
+    })
+    .on('listening', () => {
+      console.log(`Server running at http://localhost:${port}`);
+    });
+}
+
+startServer(port);
