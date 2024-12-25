@@ -383,7 +383,8 @@ button:disabled {
 }
 
 .modal-content h3 {
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 1em;
 }
 
 .modal.show .modal-content {
