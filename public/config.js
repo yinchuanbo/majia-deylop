@@ -10,10 +10,6 @@ const REPO_CONFIG = {
             name: 'vidqu.ai',
         },
         {
-            path: 'E:\\Project\\vidwud.ai',
-            name: 'vidwud.ai',
-        },
-        {
             path: 'D:\\miocreate.ai',
             name: 'miocreate.ai',
         }
