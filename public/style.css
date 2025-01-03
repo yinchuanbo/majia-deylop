@@ -258,6 +258,10 @@ button:disabled {
   border-color: var(--accent-color);
 }
 
+.radio-option:has(input:checked) {
+  background-color: #8458ff45;
+}
+
 .required {
   color: var(--error-color);
   margin-left: 3px;
@@ -297,7 +301,7 @@ button:disabled {
 }
 
 .branch-btn {
-  background: var(--accent-color)!important;
+  background: var(--accent-color) !important;
   color: white;
   padding: 6px 12px;
   border: none;
@@ -315,8 +319,8 @@ button:disabled {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); */
   background: linear-gradient(45deg, var(--accent-hover), var(--accent-color));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(124, 77, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(124, 77, 255, 0.3);
 }
 
 .current-branch-label {
@@ -657,7 +661,7 @@ input[type="radio"]:focus {
 }
 
 .vscode-btn {
-  background: var(--accent-color)!important;
+  background: var(--accent-color) !important;
   color: white;
   padding: 6px 12px;
   border: none;
