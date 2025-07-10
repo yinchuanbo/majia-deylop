@@ -38,8 +38,8 @@
       </div>
 
       <div class="btns">
-        <button id="createTagBtn" onclick="createTag()">Deploy</button>
-        <button id="showCrawlerBtn" class="crawler-btn">Crawler</button>
+        <button id="createTagBtn" onclick="createTag()">DEPLOY</button>
+        <button id="showCrawlerBtn" class="crawler-btn">CRAWLER</button>
       </div>
 
       <div id="error" class="error"></div>
@@ -50,13 +50,15 @@
         <p><strong>Commit Message:</strong> <span id="commitMessage"></span></p>
         <p><strong>Author:</strong> <span id="commitAuthor"></span></p>
         <p><strong>Date:</strong> <span id="commitDate"></span></p>
-        <p style="display: none"><strong>Created Tag:</strong> <span id="tagName"></span></p>
+        <p style="display: none">
+          <strong>Created Tag:</strong> <span id="tagName"></span>
+        </p>
       </div>
     </div>
 
     <!-- Web Crawler Modal -->
     <div id="crawlerModal" class="modal">
-      <div class="modal-content" style="padding-top: 40px;">
+      <div class="modal-content" style="padding-top: 40px">
         <span class="close" onclick="closeCrawlerModal()">&times;</span>
         <div class="form-group">
           <input
@@ -108,34 +110,43 @@
     <script>
       // Dynamically generate repository options
       function generateRepositoryOptions() {
-        const folderPathGroup = document.getElementById('folderPathGroup');
-        REPO_CONFIG.repositories.forEach(repo => {
-          const label = document.createElement('label');
-          label.className = 'radio-option';
+        const folderPathGroup = document.getElementById("folderPathGroup");
+        REPO_CONFIG.repositories.forEach((repo) => {
+          const label = document.createElement("label");
+          label.className = "radio-option";
           label.innerHTML = `
             <div class="repo-info">
               <input type="radio" name="folderPath" value="${repo.path}" />
               ${repo.name}
-              <span class="current-branch-label" data-repo="${repo.path.replace(/\\/g, '\\\\')}"></span>
+              <span class="current-branch-label" data-repo="${repo.path.replace(
+                /\\/g,
+                "\\\\"
+              )}"></span>
             </div>
             <div class="button-group">
-              <button class="branch-btn" onclick="showBranchModal(event, '${repo.path.replace(/\\/g, '\\\\')}')">
-                Switch Branch
+              <button class="branch-btn" onclick="showBranchModal(event, '${repo.path.replace(
+                /\\/g,
+                "\\\\"
+              )}')">
+                SwBr
               </button>
-              <button class="vscode-btn" onclick="openInVSCode(event, '${repo.path.replace(/\\/g, '\\\\')}')">
-                VS Code
+              <button class="vscode-btn" onclick="openInVSCode(event, '${repo.path.replace(
+                /\\/g,
+                "\\\\"
+              )}')">
+                VSC
               </button>
             </div>
           `;
           folderPathGroup.appendChild(label);
         });
-        
+
         // Initialize branch labels after creating all repository options
         initializeCurrentBranches();
       }
 
       // Initialize repository options when the page loads
-      document.addEventListener('DOMContentLoaded', generateRepositoryOptions);
+      document.addEventListener("DOMContentLoaded", generateRepositoryOptions);
     </script>
   </body>
 </html>

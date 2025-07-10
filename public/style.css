@@ -37,7 +37,7 @@ body {
 }
 
 .container {
-  width: 600px;
+  width: 650px;
   background-color: var(--bg-secondary);
   padding: 20px;
   opacity: 0;
@@ -71,7 +71,7 @@ input[type="text"] {
   padding-left: 10px;
   outline: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: var(--bg-tertiary);
+  background-color: #212121;
   color: var(--text-primary);
 }
 
@@ -312,6 +312,7 @@ button:disabled {
   font-style: italic;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
 }
 
 .branch-btn:hover {
@@ -324,7 +325,7 @@ button:disabled {
 }
 
 .current-branch-label {
-  color: #52c41a;
+  color: var(--accent-hover);
   font-size: 12px;
   max-width: 150px;
   overflow: hidden;
@@ -672,6 +673,7 @@ input[type="radio"]:focus {
   font-style: italic;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
 }
 
 .vscode-btn:hover {
